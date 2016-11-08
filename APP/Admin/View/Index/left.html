@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv=content-type content="text/html; charset=utf-8" />
+        <link href="{$Think.config.ADMIN_CSS_URL}admin.css" type="text/css" rel="stylesheet" />
+        <script language=javascript>
+            function expand(el)
+            {
+                childobj = document.getElementById("child" + el);
+
+                if (childobj.style.display == 'none')
+                {
+                    childobj.style.display = 'block';
+                }
+                else
+                {
+                    childobj.style.display = 'none';
+                }
+                return;
+            }
+        </script>
+    </head>
+    <body>
+        <table height="100%" cellspacing=0 cellpadding=0 width=170 
+               background={$Think.config.ADMIN_IMG_URL}menu_bg.jpg border=0>
+               <tr>
+                <td valign=top align=middle>
+                    <table cellspacing=0 cellpadding=0 width="100%" border=0>
+
+                        <tr>
+                            <td height=10></td></tr></table>
+                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+
+                        <tr height=22>
+                            <td style="padding-left: 30px" background={$Think.config.ADMIN_IMG_URL}menu_bt.jpg><a 
+                                    class=menuparent onclick=expand(1) 
+                                    href="javascript:void(0);">文章管理</a></td></tr>
+                        <tr height=4>
+                            <td></td></tr></table>
+                    <table id=child1 style="display: none" cellspacing=0 cellpadding=0 
+                           width=150 border=0>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="__APP__/Blog/blog"
+                                    target=right>文章列表</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/Blog/add"
+                                    target=right>添加文章</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/Blog/addSay"
+                                   target=right>添加说说</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/Blog/sayShow"
+                                   target=right>说说列表</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href='__APP__/Blog/dump'
+                                    target=right>回收站</a></td></tr>
+                        <tr height=4>
+                            <td colspan=2></td></tr></table>
+                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+
+                        <tr height=22>
+                            <td style="padding-left: 30px" background={$Think.config.ADMIN_IMG_URL}menu_bt.jpg><a
+                                    class=menuparent onclick=expand(2)
+                                    href="javascript:void(0);">分类管理</a></td></tr>
+                        <tr height=4>
+                            <td></td></tr></table>
+                    <table id=child2 style="display: none" cellspacing=0 cellpadding=0
+                           width=150 border=0>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href='__APP__/lanmu'
+                                   target=right>栏目列表</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/lanmu/add"
+                                   target=right>添加栏目</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/Class"
+                                   target=right>分类列表</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="__APP__/Class/add"
+                                   target=right>添加分类</a></td></tr>
+                        <tr height=4>
+                            <td colspan=2></td></tr></table>
+
+                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+                        <tr height=22>
+                            <td style="padding-left: 30px" background={$Think.config.ADMIN_IMG_URL}menu_bt.jpg><a 
+                                    class=menuparent onclick=expand(3) 
+                                    href="javascript:void(0);">评论管理</a></td></tr>
+                        <tr height=4>
+                            <td></td></tr></table>
+                    <table id=child3 style="display: none" cellspacing=0 cellpadding=0
+                           width=150 border=0>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>最新评论</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>未读评论</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>回收站</a></td></tr>
+                        <tr height=4>
+                            <td colspan=2></td></tr></table>
+                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+                        <tr height=22>
+                            <td style="padding-left: 30px" background={$Think.config.ADMIN_IMG_URL}menu_bt.jpg><a 
+                                    class=menuparent onclick=expand(4) 
+                                    href="javascript:void(0);">用户管理</a></td></tr>
+                        <tr height=4>
+                            <td></td></tr></table>
+                    <table id=child4 style="display: none" cellspacing=0 cellpadding=0 
+                           width=150 border=0>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>用户列表</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>最新用户</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>添加用户</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="#"
+                                    target=right>回收站</a></td></tr>
+                        <tr height=4>
+                            <td colspan=2></td></tr></table>
+                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+                        <tr height=22>
+                            <td style="padding-left: 30px" background={$Think.config.ADMIN_IMG_URL}menu_bt.jpg><a 
+                                    class=menuparent onclick=expand(5) 
+                                    href="javascript:void(0);">系统管理</a></td></tr>
+                        <tr height=4>
+                            <td></td></tr></table>
+                    <table id=child5 style="display: none" cellspacing=0 cellpadding=0 
+                           width=150 border=0>
+
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>模板管理</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9 
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild 
+                                   href="#" 
+                                    target=right>网站管理</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="#"
+                                    target=right>管理员管理</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   href="#"
+                                    target=right>字符过滤</a></td></tr>
+                        <tr height=20>
+                            <td align=middle width=30><img height=9
+                                                           src="{$Think.config.ADMIN_IMG_URL}menu_icon.gif" width=9></td>
+                            <td><a class=menuchild
+                                   onclick="if (confirm('确定要退出吗？')) return true; else return false;"
+                                   href="__APP__/Login/logout"
+                                   target=_top>退出系统</a></td></tr>
+                        <tr height=4>
+                            <td colspan=2></td></tr></table></td>
+
+                <td width=1 bgcolor=#d1e6f7></td>
+            </tr>
+        </table>
+    </body>
+</html>

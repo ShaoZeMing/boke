@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加说说</title>
+    <script type="text/JavaScript" charset="utf-8" src="{$Think.config.UE_URL}ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{$Think.config.UE_URL}ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="{$Think.config.UE_URL}lang/zh-cn/zh-cn.js"></script>
+    <link type="text/css" href="{$Think.config.UE_URL}/themes/default/css/ueditor.css"/>
+    <script type="text/javascript">
+        //1定义在线编辑器文件夹所在的路径
+        window.UEDITOR_HOME_URL = '{$Think.config.UE_URL}';
+        //2载入编辑器
+        window.onload = function () {
+            //2.1配置编辑器(这里的所有配置项都需要自己在ueditor.config.js中复制过来,复制以后记得把冒号改成等号.)
+            window.UEDITOR_CONFIG.initialFrameWidth = 600; //编辑器宽度
+            window.UEDITOR_CONFIG.initialFrameHeight = 200; //编辑器高度
+            window.UEDITOR_CONFIG.autoClearinitialContent = true; //自动清除编辑器初始内容
+            //2.2实例化编辑器到id为myEditor的文本框
+            UE.getEditor('myEditor');
+        }
+    </script>
+    <style>
+        table{
+
+            align-content: center;
+            width: auto;
+            padding: 50px;
+        }
+        tr{
+            padding: 10px;
+        }
+        select,input{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="__SELF__" METHOD="post" ENCTYPE="multipart/form-data">
+         <table  >
+
+             <tr>
+                 <td align="center">内&nbsp;容：</td><td><textarea name="blog_content" id="myEditor"  >请输入内容</textarea></td>
+             </tr>
+             <tr>
+                 <td ><input  type="submit" size="100%" name="submit" value="提交"></td>
+             </tr>
+         </table>
+    </form>
+</body>
+</html>

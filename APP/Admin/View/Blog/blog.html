@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>文章列表</title>
+        <link href="{$Think.config.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript">
+          //预览文章js代码
+            var open;
+            function lert(id){
+                var oUrl= 'http://www.ming.com/index.php/Index/read/id/'+id ;
+               open= window.open(oUrl,"_blank"," width=800px, height=600px,alwaysRaised=yes, top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no")
+
+            }
+            function cols(){
+                open.window.close();
+                open.window.opener.location.reload();
+            }
+        </script>
+    </head>
+    <body>
+        <style>
+            .tr_color{background-color: #9F88FF}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：文章管理-》文章列表</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;" href="__CONTROLLER__/add">【添加文章】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+
+      <div >
+          <table class="table_a" border="1" width="100%">
+              <tr style="font-weight: bold;">
+                  <th>ID</th>
+                  <th>标题</th>
+                  <th>分类</th>
+                  <th>作者</th>
+                  <th>时间</th>
+                  <th>操作</th>
+              </tr>
+              <foreach name="info" item="v">
+              <tr>
+                  <td>{$v.blog_id}</td>
+                  <td>{$v.blog_title}</td>
+                  <td>{$cinfo[$v[blog_cid]]}</td>
+                  <td>{$uinfo[$v[blog_uid]]}</td>
+                  <td>{$v.blog_time|date="Y-m-d H:i:s",###}</td>
+                  <td><img width="20px" onmouseout="cols()" onmouseover="lert('{$v.blog_id}')" src="{$Think.Config.ADMIN_IMG_URL}yan.png" alt="预览"/>
+                      　<a href="__CONTROLLER__/update?id={$v.blog_id}">修改</a>&nbsp;
+                      <a onclick="if (confirm('确定要删除吗？')) return true; else return false;"
+                         href="__CONTROLLER__/del?id={$v.blog_id}">删除</a></td>
+              </tr>
+              </foreach>
+          </table>
+      </div>
+        <p>
+        <div class="green-black">
+            {$p}
+            </div></p>
+
+    </body>
+</html>

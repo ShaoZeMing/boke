@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改栏目</title>
+    <style>
+        td{
+            height: 30px;
+            padding: 1px;
+        }
+        select,input{
+            width: 130px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+<table style="height: auto; width: 70%; align-content: center;" align="center">
+    <caption><h1>修改栏目</h1></caption>
+    <form action="__SELF__" method="post" >
+        <tr>
+            <input type="hidden" name="lanmu_id" value="{$info.lanmu_id}" />
+            <td>栏目名称：<input type="text" name="lanmu_name" value="{$info.lanmu_name}" ></td>
+        </tr>
+        <tr>
+            <td>栏目属性：<select name="lanmu_type" style="width: 120px;">
+                <option  value="0">请选择</option>
+                <option value="0"<if condition="$info['lanmu_type'] eq 0  ">selected="selected"</if>>显示</option>
+                <option value="1"<if condition="$info['lanmu_type'] eq 1  ">selected="selected"</if>>隐藏</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>栏目链接：<input type="text" name="lanmu_link" value="{$info.lanmu_link}" ></td>
+        </tr>
+        <tr>
+            <td>栏目排序：<input type="text" name="lanmu_ord" value="{$info.lanmu_ord}"></td>
+        </tr>
+        <tr>
+            <td><input style="width: 50px" type="submit" name="submit"  value="修改" ></td>
+        </tr>
+
+    </form>
+</table>
+
+
+</body>
+</html>

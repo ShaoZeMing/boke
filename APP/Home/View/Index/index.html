@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ShaoZeMing个人博客</title>
+  <meta name="baidu-site-verification" content="euLKnnRjtn" />
+  <meta name="keywords" content="ShaoZeMing个人博客,博客模板" />
+<meta name="description" content="ShaoZeMing个人博客，优雅、稳重、大气,低调。" />
+<link href="{$Think.config.CSS_URL}base.css" rel="stylesheet">
+<link href="{$Think.config.CSS_URL}index.css" rel="stylesheet">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?3db87e45a04b0e1b08b09dfa8e6fec1d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <!--[if lt IE 9]>
+<script src="{$Think.config.JS_URL}modernizr.js"></script>
+<script src="{$Think.config.JQUERY_URL}"></script>
+
+
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+    <foreach name='linfo' item="v">
+    <a href="__APP__/{$v.lanmu_link}/id/{$v.lanmu_id}.html"><span>{$v.lanmu_name}</span><span class="en">{$v.lanmu_ename}</span></a>
+  </foreach>
+  </nav>
+</header>
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p>选择不同，却各有各的精彩。</p>
+      <p>谁也不是谁的救世主，不用通过虚构夸大别人的苦难来获得暂时的满足感。</p>
+      <p>生活本身就是如鱼饮水，冷暖自知。</p>
+    </ul>
+    <div class="avatar"><a href="#"><span>邵泽明</span></a> </div>
+  </section>
+</div>
+<!--<div class="template">-->
+  <!--<div class="box">-->
+    <!--<h3>-->
+      <!--<p><span>个人博客</span>模板 Templates</p>-->
+    <!--</h3>-->
+    <!--<ul>-->
+      <!--<li><a href="/"  target="_blank"><img src="{$Think.config.IMG_URL}01.jpg"></a><span>仿新浪博客风格・梅――古典个人博客模板</span></li>-->
+      <!--<li><a href="/" target="_blank"><img src="{$Think.config.IMG_URL}02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{$Think.config.IMG_URL}03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>-->
+      <!--<li><a href="/" target="_blank"><img src="{$Think.config.IMG_URL}04.jpg"></a><span>女生清新个人博客网站模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{$Think.config.IMG_URL}02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{$Think.config.IMG_URL}03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+</div>
+<article>
+  <h2 class="title_tj">
+    <p>文章<span>推荐</span></p>
+  </h2>
+  <div class="bloglist left">
+    <foreach name="info" item="v">
+    <h3><a href="__CONTROLLER__/read/id/{$v.blog_id}.html">{$v.blog_title}</a></h3>
+    <figure><img src="__ROOT__{$v.blog_logo}"></figure>
+    <ul>
+      <p>　　{$v.blog_content}</p>
+      <a title="{$v.blog_title}" href="__CONTROLLER__/read/id/{$v.blog_id}.html" target="_blank" class="readmore">阅读全文>></a>
+    </ul>
+    <p class="dateview"><span>{$v.blog_time|date="Y-m-d",###}</span><span>作者：{$v.user_ckame}</span><span>个人博客：[<a href="__CONTROLLER__/class_lists?id={$v.class_id}">{$v.class_name}</a>]</span></p>
+    </foreach>
+  </div>
+  <aside class="right">
+    <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+    <div class="news">
+    <h3>
+      <p>最新<span>文章</span></p>
+    </h3>
+    <ul class="rank">
+      <foreach name="now" item="v">
+      <li><a href="__CONTROLLER__/read/id/{$v.blog_id}.html" title="Column 三栏布局 个人网站模板" target="_blank">{$v.blog_title}</a></li>
+      </foreach>
+    </ul>
+    <h3 class="ph">
+      <p>点击<span>排行</span></p>
+    </h3>
+      <ul class="paih">
+        <foreach name="click" item="v">
+          <li><a href="__CONTROLLER__/read/id/{$v.blog_id}.html" title="Column 三栏布局 个人网站模板" target="_blank">{$v.blog_title}</a></li>
+        </foreach>
+      </ul>
+    <h3 class="links">
+      <p>友情<span>链接</span></p>
+    </h3>
+    <ul class="website">
+      <li><a href="http://www.yangqq.com/">杨青个人博客</a></li>
+      <li><a href="http://www.imooc.com/">慕课网</a></li>
+      <li><a href="http://www.w3school.com.cn/">W3School</a></li>
+    </ul> 
+    </div>  
+    <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script> 
+    <script type="text/javascript" id="bdshell_js"></script> 
+    <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/{$Think.config.JS_URL}shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script> 
+    <!-- Baidu Button END -->   
+    <a href="#" class="weixin"> </a></aside>
+</article>
+<footer>
+  <p>Design by ShaoMing <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备14009406号-1</a> <a href="http://tongji.baidu.com/web/welcome/ico?s=3db87e45a04b0e1b08b09dfa8e6fec1d">网站统计</a></p>
+
+</footer>
+<script src="{$Think.config.JS_URL}silder.js"></script>
+</body>
+</html>

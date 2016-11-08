@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ShaoZeMing个人博客网站―一个走在web设计之路上的个人博客网站</title>
+<meta name="keywords" content="个人博客,ShaoZeMing个人博客,个人博客模板,杨青" />
+<meta name="description" content="shaoZeMing个人博客，是一个站在web设计之路的程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+<link href="{$Think.config.CSS_URL}base.css" rel="stylesheet">
+    <link href="{$Think.config.CSS_URL}about.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="{$Think.config.JS_URL}modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+    <div id="logo"><a href="/"></a></div>
+    <nav class="topnav" id="topnav">
+        <foreach name='linfo' item="v">
+            <a href="__APP__/{$v.lanmu_link}/id/{$v.lanmu_id}.html"><span>{$v.lanmu_name}</span><span class="en">{$v.lanmu_ename}</span></a>
+        </foreach>
+    </nav>
+</header>
+<article class="aboutcon">
+  <h1 class="t_nav"><span>留下你想说的话，让我记住你！。</span><a href="__APP__" class="n1">网页</a><a href="#" class="n2">留言板</a></h1>
+    <div class="about left">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="1" data-title="留言板" data-url="__SELF__"></div>
+        <!-- 多说评论框 end -->
+        <!-- Duoshuo Comment BEGIN -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <literal>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"4d4kcom"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+        </literal>
+        <!-- 多说公共JS代码 end -->
+        <!-- Duoshuo Comment END -->
+
+  </div>
+
+<aside class="right">
+    <div class="about_c">
+        <p>网名：<span>Ming</span> | 迷彩没有那么绿</p>
+        <p>姓名：邵泽明 </p>
+        <p>生日：1992-04-26</p>
+        <p>籍贯：四川省―宜宾市</p>
+        <p>现居：北京市―朝阳区</p>
+        <p>职业：系统设计、网站制作</p>
+        <p>喜欢的书：《平凡的世界》</p>
+        <p>喜欢的音乐：《what makes you beautiful》《曾经的你》《有没有人告诉你》</p>
+        <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=9d3f04bf061587805eeef16bd674a5a4136f67aaf81bbecca5e6a526a613f207"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PHP四川" title="PHP四川"></a>
+        <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=0ejj6ePl4eHo55GgoP_yvrw" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a>    </div>
+</aside>
+</article>
+<footer>
+    <p>Design by ShaoMing <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备14009406号-1</a> <a href="/">网站统计</a></p>
+</footer>
+<script src="{$Think.config.JS_URL}silder.js"></script>
+</body>
+</html>

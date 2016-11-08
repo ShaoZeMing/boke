@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改子分类</title>
+    <style>
+        td{
+            height: 30px;
+            padding: 1px;
+        }
+        select,input{
+            width: 130px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+<table style="height: auto; width: 70%; align-content: center;" align="center">
+    <caption><h1>修改子分类</h1></caption>
+    <form action="__SELF__" method="post" >
+        <tr>
+            <input type="hidden" name="class_id" value="{$info.class_id}" />
+            <td>子类名称：<input type="text" name="class_name" value="{$info.class_name}" ></td>
+        </tr>
+        <tr>
+            <td>父级栏目：<select name="class_lid" style="width: 120px;">
+                <option  value="0">请选择</option>
+                <foreach name="infol" item="v">
+                <option value="{$v.lanmu_id}"
+                    <if condition="$v['lanmu_id'] eq $info['class_lid'] ">selected="selected"</if>>{$v.lanmu_name}</option>
+                </foreach>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>子类属性：<select name="class_type" style="width: 120px;">
+                <option  value="0">请选择</option>
+                <option value="0"<if condition="$info['class_type'] eq 0  ">selected="selected"</if>>显示</option>
+                <option value="1"<if condition="$info['class_type'] eq 1  ">selected="selected"</if>>隐藏</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>子类排序：<input type="text" name="class_ord" value="{$info.class_ord}"></td>
+        </tr>
+        <tr>
+            <td><input style="width: 50px" type="submit" name="submit"  value="修改" ></td>
+        </tr>
+
+    </form>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改栏目</title>
+    <style>
+        td{
+            height: 30px;
+            padding: 1px;
+        }
+        select,input{
+            width: 130px;
+            height: 25px;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkform(){
+            if(document.form.user_pwd.value==''){
+                alert('请输入原始密码');
+                return false;
+            } else if(document.form.user_pwd1.value==''){
+                alert('请输入新密码');
+                return false;
+            } else if(document.form.user_pwd2.value != document.form.user_pwd1.value){
+                alert('两次密码输入不一样，\n 请重新输入！');
+                return false;
+            }else {
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table style="height: auto; width: 70%; align-content: center;" align="center">
+    <caption><h1>修改密码</h1></caption>
+    <form action="__SELF__" method="post"  name="form" onsubmit="return checkform()">
+        <tr>
+            <input type="hidden" name="user_id" value="{$info.user_id}" />
+            <td>用户名称：{$info.user_name}</td>
+        </tr>
+        <tr>
+            <td>用户昵称：<input type="text" name="user_ckame" value="{$info.user_ckame}" ></td>
+        </tr>
+        <tr>
+            <td>原始密码：<input type="text" name="user_pwd" ></td>
+        </tr>
+        <tr>
+            <td>新密码：　<input  type="text" name="user_pwd1" ></td>
+        </tr>
+        <tr>
+            <td>确认密码：<input type="text" name="user_pwd2" ></td>
+        </tr>
+        <tr>
+            <td><input style="width: 80px" type="submit" name="submit"  value="确认更改" ></td>
+        </tr>
+
+    </form>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>文章列表</title>
+        <link href="{$Think.config.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <style>
+            .tr_color{background-color: #9F88FF}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：文章管理-》说说列表</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;" href="__CONTROLLER__/addSay">【添加说说】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+
+      <div >
+          <table class="table_a" border="1" width="100%">
+              <tr style="font-weight: bold;">
+                  <th>ID</th>
+                  <th width="60%">内容</th>
+                  <th>分类</th>
+                  <th>时间</th>
+                  <th>操作</th>
+              </tr>
+              <foreach name="info" item="v">
+              <tr>
+                  <td>{$v.blog_id}</td>
+                  <td>{$v.blog_content}</td>
+                  <td>{$cinfo[$v[blog_cid]]}</td>
+                  <td>{$v.blog_time|date="Y-m-d H:i:s",###}</td>
+                  <td><a href="__CONTROLLER__/updateSay?id={$v.blog_id}">修改</a>&nbsp;
+                      <a onclick="if (confirm('确定要删除吗？')) return true; else return false;"
+                         href="__CONTROLLER__/del?id={$v.blog_id}">删除</a></td>
+              </tr>
+              </foreach>
+          </table>
+      </div>
+        <p>
+        <div class="green-black">
+            {$p}
+            </div></p>
+
+    </body>
+</html>

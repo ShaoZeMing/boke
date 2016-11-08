@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>文章回收站</title>
+        <link href="{$Think.config.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+        <style type="text/css">
+            DIV.green-black {
+                padding-right: 3px; padding-left: 3px;
+                padding-bottom: 3px; margin: 3px;
+                padding-top: 3px; text-align: center; }
+            DIV.green-black strong {
+                border-right: #aad83e 1px solid; padding-right: 5px;
+                border-top: #aad83e 1px solid; padding-left: 5px;
+                background:  #aad83e; padding-bottom: 2px;
+                border-left: #aad83e 1px solid;
+                color: #fff; margin-right: 2px; padding-top: 2px;
+                border-bottom: #aad83e 1px solid; text-decoration: none; }
+            DIV.green-black A {
+                border-right: #2c2c2c 1px solid; padding-right: 5px;
+                border-top: #2c2c2c 1px solid; padding-left: 5px;
+                background:  #2c2c2c; padding-bottom: 2px;
+                border-left: #2c2c2c 1px solid;
+                color: #fff; margin-right: 2px; padding-top: 2px;
+                border-bottom: #2c2c2c 1px solid; text-decoration: none; }
+            DIV.green-black A:hover {
+                border-right: #aad83e 1px solid; border-top: #aad83e 1px solid;
+                background: #aad83e; border-left: #aad83e 1px solid;
+                color: #fff; border-bottom: #aad83e 1px solid; }
+            DIV.green-black A:active {
+                border-right: #aad83e 1px solid; border-top: #aad83e 1px solid;
+                background: #aad83e; border-left: #aad83e 1px solid;
+                color: #fff; border-bottom: #aad83e 1px solid; }
+            DIV.green-black SPAN.current {
+                border-right: #aad83e 1px solid; padding-right: 5px;
+                border-top: #aad83e 1px solid; padding-left: 5px;
+                font-weight: bold; background: url(image2.gif) #aad83e;
+                padding-bottom: 2px; border-left: #aad83e 1px solid; color: #fff;
+                margin-right: 2px; padding-top: 2px; border-bottom: #aad83e 1px solid; }
+            th{
+                height: 40px;
+                font-size: 25px;
+            }
+            td{
+                height: 30px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+            .tr_color{background-color: #9F88FF}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：文章管理-》回收站</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;"
+                       onclick="if (confirm('确定要清空回收站吗？')) return true; else return false;"
+                       href="__CONTROLLER__/dump?id=row">【清空回收站】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+        <div class="div_search">
+            <span>
+                <form action="#" method="get">
+                    品牌<select name="s_product_mark" style="width: 100px;">
+                        <option selected="selected" value="0">请选择</option>
+                        <option value="1">苹果apple</option>
+                    </select>
+                    <input value="查询" type="submit" />
+                </form>
+            </span>
+        </div>
+      <div >
+          <table class="table_a" border="1" width="100%">
+              <tr style="font-weight: bold;">
+                  <th>ID</th>
+                  <th>标题</th>
+                  <th>分类</th>
+                  <th>作者</th>
+                  <th>时间</th>
+                  <th>操作</th>
+              </tr>
+              <foreach name="info" item="v">
+              <tr>
+                  <td>{$v.blog_id}</td>
+                  <td>{$v.blog_title}</td>
+                  <td>{$cinfo[$v[blog_cid]]}</td>
+                  <td>{$uinfo[$v[blog_uid]]}</td>
+                  <td>{$v.blog_time|date="Y-m-d H:i:s",###}</td>
+                  <td><a href="__CONTROLLER__/restore?id={$v.blog_id}">恢复</a>&nbsp;
+                      <a onclick="if (confirm('确定要删除吗？')) return true; else return false;"
+                         href="__CONTROLLER__/dump?id={$v.blog_id}">清除</a></td>
+              </tr>
+              </foreach>
+          </table>
+      </div>
+        <p>
+        <div class="green-black">
+            {$p}
+            </div></p>
+
+    </body>
+</html>

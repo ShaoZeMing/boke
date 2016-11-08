@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>邵泽明的个人博客</title>
+<meta name="keywords" content="个人博客,邵泽明个人博客,个人博客模板,邵泽明" />
+<meta name="description" content="邵泽明个人博客，程序员个人网站，个人博客模板免费资源下载的个人原创网站。" />
+<link href="{$Think.config.CSS_URL}base.css" rel="stylesheet">
+<link href="{$Think.config.CSS_URL}new.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="{$Think.config.JS_URL}modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+    <foreach name='linfo' item="v">
+      <a href="__APP__/{$v.lanmu_link}/id/{$v.lanmu_id}.html"><span>{$v.lanmu_name}</span><span class="en">{$v.lanmu_ename}</span></a>
+    </foreach>
+  </nav>
+</header>
+<article class="blogs">
+  <h1 class="t_nav"><span>您当前的位置：<a href="/index.html">首页</a>&nbsp;&gt;&nbsp;<a href="/news/s/">{$blog.lanmu_name}</a>&nbsp;&gt;&nbsp;<a href="/news/s/">{$blog.class_name}</a></span><a href="__APP__" class="n1">网站首页</a><a href="/" class="n2">{$blog.class_name}</a></h1>
+  <div class="index_about">
+    <h2 class="c_titile">{$blog.blog_title}</h2>
+    <p class="box_c"><span class="d_time">发布时间：{$blog.blog_time|date="Y-m-d",###}</span><span>编辑：{$blog.user_ckame}</span><span>查看：{$blog.blog_click}</span></p>
+    <ul class="infos">
+      {$blog.blog_content}
+    </ul>
+    <div class="keybq">
+    <p><span>关键字词</span>：PHP,前端,框架,javaScript</p>
+    
+    </div>
+    <div class="ad">
+      <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="{$blog.blog_id}" data-title="{$blog.blog_title}" data-url="__SELF__"></div>
+      <!-- 多说评论框 end -->
+    </div>
+    <div class="nextinfo">
+      <p>上一篇：<a href="__CONTROLLER__/read?id={$blog_pre.blog_id}">{$blog_pre.blog_title}</a></p>
+      <p>下一篇：<a href="__CONTROLLER__/read?id={$blog_next.blog_id}">{$blog_next.blog_title}</a></p>
+    </div>
+    <div class="otherlink">
+      <h2>相关文章</h2>
+      <ul>
+        <foreach name="click" item="v">
+          <li><a href="__CONTROLLER__/read/id/{$v.blog_id}.html" title="{$v.blog_title}" target="_blank">{$v.blog_title}</a></li>
+        </foreach>
+      </ul>
+    </div>
+  </div>
+  <aside class="right">
+    <div class="rnav">
+      <h2>栏目导航</h2>
+      <ul>
+        <foreach name="class" item="v">
+        <li><a href="__CONTROLLER__/class_lists/id/{$v.class_id}.html" target="_blank">{$v.class_name}</a></li>
+        </foreach>
+      </ul>
+    </div>
+    <div class="rnavs">
+      <h2>栏目导航</h2>
+      <ul>
+        <foreach name="class" item="v">
+          <li><a href="__CONTROLLER__/class_lists/id/{$v.class_id}.html" target="_blank">{$v.class_name}</a></li>
+        </foreach>
+      </ul>
+    </div>
+    <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+      document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+    </script>
+    <!-- Baidu Button END -->
+    <div class="blank"></div>
+    <div class="news">
+      <h3>
+        <p>栏目<span>最新</span></p>
+      </h3>
+      <ul class="rank">
+        <foreach name="now" item="v">
+          <li><a href="__CONTROLLER__/read/id/{$v.blog_id}.html" title="{$v.blog_title}" target="_blank">{$v.blog_title}</a></li>
+        </foreach>
+      </ul>
+      <h3 class="ph">
+        <p>点击<span>排行</span></p>
+      </h3>
+      <ul class="paih">
+        <foreach name="click" item="v">
+          <li><a href="__CONTROLLER__/read/id/{$v.blog_id}.html" title="{$v.blog_title}" target="_blank">{$v.blog_title}</a></li>
+        </foreach>
+      </ul>
+    </div>
+    <div class="visitors">
+      <h3>
+        <p>最近访客</p>
+      </h3>
+      <ul>
+      </ul><ul class="ds-recent-visitors"  data-num-items="24"></ul>
+      <literal>
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"4d4kcom"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = 'http://static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+      </literal>
+    </div>
+  </aside>
+</article>
+<footer>
+  <p>Design by ShaoMing <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备14009406号-1</a> <a href="/">网站统计</a></p>
+</footer>
+<script src="js/silder.js"></script>
+</body>
+</html>
